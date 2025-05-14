@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instructor Scheduling System</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core/main.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid/main.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/interaction/main.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instructor Scheduling System</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" />
 </head>
 <body>
-    <header>
-        <h1>Instructor Scheduling System</h1>
-        <nav>
-            <a href="instructor-enrollment.html">Instructor Enrollment</a>
-            <a href="schedule-management.html">Manage Schedule</a>
-            <a href="admin-dashboard.html">Admin Dashboard</a>
-        </nav>
-    </header>
-
-    <main>
-        <h2>Welcome to the Instructor Scheduling System</h2>
-        <p>This system helps to manage instructor schedules, track availability, and avoid conflicts.</p>
-        
-        <div id="calendar"></div>
-    </main>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                plugins: [ 'dayGrid', 'interaction' ],
-                editable: true,
-                droppable: true,
-                events: [
-                    { title: 'Math 101', start: '2025-05-14T10:00:00', end: '2025-05-14T12:00:00' },
-                    { title: 'Physics 102', start: '2025-05-15T14:00:00', end: '2025-05-15T16:00:00' }
-                ]
-            });
-            calendar.render();
-        });
-    </script>
+  <header>
+    <div class="logo">Campus Scheduler</div>
+    <nav>
+      <ul>
+        <li><a href="instructor_enrollment.html">Enrollment</a></li>
+        <li><a href="schedule_management.html">Schedule</a></li>
+        <li><a href="instructor_profile.html">Profile</a></li>
+        <li><a href="admin_dashboard.html">Admin</a></li>
+        <li><a href="notifications.html">Notifications</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="dashboard">
+      <h1>Welcome, [User Name]</h1>
+      <div class="cards">
+        <div class="card">
+          <h2>Upcoming Classes</h2>
+          <p>3 classes scheduled this week</p>
+        </div>
+        <div class="card">
+          <h2>Notifications</h2>
+          <p>2 new messages</p>
+        </div>
+        <div class="card">
+          <h2>Tasks</h2>
+          <p>5 pending tasks</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Campus Scheduler. All rights reserved.</p>
+  </footer>
+  <script src="assets/js/scripts.js"></script>
 </body>
 </html>
