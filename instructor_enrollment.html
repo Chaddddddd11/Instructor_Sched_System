@@ -1,0 +1,53 @@
+<!-- instructor_enrollment.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instructor Enrollment</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Instructor Enrollment</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="schedule_management.html">Manage Schedule</a></li>
+        <li><a href="admin_features.html">Admin Features</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Enroll New Instructor</h2>
+    <form id="enrollment-form">
+      <label for="instructor-name">Instructor Name:</label>
+      <input type="text" id="instructor-name" required><br><br>
+      
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" required><br><br>
+
+      <label for="availability">Select Availability:</label><br>
+      <input type="checkbox" id="monday"> Monday
+      <input type="checkbox" id="tuesday"> Tuesday
+      <input type="checkbox" id="wednesday"> Wednesday
+      <input type="checkbox" id="thursday"> Thursday
+      <input type="checkbox" id="friday"> Friday<br><br>
+
+      <button type="submit">Enroll Instructor</button>
+    </form>
+
+    <h3>Search and Filter</h3>
+    <input type="text" id="search" placeholder="Search by Name or Subject" onkeyup="searchInstructors()">
+    <br><br>
+    <div id="instructor-list"></div>
+  </main>
+
+  <footer>
+    <p>© 2025 Instructor Scheduling System</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
