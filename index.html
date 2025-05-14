@@ -1,31 +1,45 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Instructor Scheduling System</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Scheduling System</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/core/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/daygrid/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/interaction/main.min.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Instructor Scheduling System</h1>
-    <nav>
-      <ul>
-        <li><a href="instructor_enrollment.html">Instructor Enrollment</a></li>
-        <li><a href="schedule_management.html">Manage Schedule</a></li>
-        <li><a href="admin_features.html">Admin Features</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <h1>Instructor Scheduling System</h1>
+        <nav>
+            <a href="instructor-enrollment.html">Instructor Enrollment</a>
+            <a href="schedule-management.html">Manage Schedule</a>
+            <a href="admin-dashboard.html">Admin Dashboard</a>
+        </nav>
+    </header>
 
-  <main>
-    <h2>Welcome to the Instructor Scheduling System</h2>
-    <p>Select an option from the menu to begin.</p>
-  </main>
+    <main>
+        <h2>Welcome to the Instructor Scheduling System</h2>
+        <p>This system helps to manage instructor schedules, track availability, and avoid conflicts.</p>
+        
+        <div id="calendar"></div>
+    </main>
 
-  <footer>
-    <p>© 2025 Instructor Scheduling System</p>
-  </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                plugins: [ 'dayGrid', 'interaction' ],
+                editable: true,
+                droppable: true,
+                events: [
+                    { title: 'Math 101', start: '2025-05-14T10:00:00', end: '2025-05-14T12:00:00' },
+                    { title: 'Physics 102', start: '2025-05-15T14:00:00', end: '2025-05-15T16:00:00' }
+                ]
+            });
+            calendar.render();
+        });
+    </script>
 </body>
 </html>
